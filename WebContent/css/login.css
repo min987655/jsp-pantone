@@ -1,0 +1,75 @@
+
+body {
+  background:white;
+  font-family: 'Heebo', sans-serif;
+  font-size: 10px;
+  margin-top: 13em;
+}
+
+form {
+  background: #fff;
+  padding: 5em 4em 2em;
+  max-width: 400px;
+  margin: 2em auto 0;
+  box-shadow: 0 0 0.5em rgb(218, 218, 218);
+  border-radius: 2px;
+}
+
+h2 {
+  margin: .5em 0 0 0;
+  text-align: center;
+  font-size: 2.2rem;
+  color: rgb(77, 77, 77);
+}
+
+p {
+  margin: 0 0 3em 0;
+  position: relative;
+}
+
+input {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  outline: none;
+  margin:0;
+}
+
+label{
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 0.8rem;
+  display: block;
+  padding: 4px 0 0 0.5em;
+  font-weight: 600;
+}
+
+#id, #password {
+  background: #fff;
+  border: 1px solid #dbdbdb;
+  font-size: 1.6em;
+  padding: .8em .5em;
+  border-radius: 2px;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  opacity: 60%;
+}
+
+#submit {
+  border-radius: 2px;
+  border: none;
+  color: rgb(206, 171, 150);
+  cursor: pointer;
+  display: block;
+  font-size: 2em;
+  line-height: 1.6em;
+  margin: 2em 0 0;
+  outline: none;
+  padding: .8em 0;
+}
+
+#submit:hover {
+  background: rgb(206, 171, 150);
+  color: white;
+}
+

@@ -1,0 +1,26 @@
+.grid__section__palette {
+    grid-column: 3/10 ;
+    justify-content: center;
+}
+
+.list__img__palette img{
+    width: 20em;
+}
+
+.thumbnail__list__palette {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 7em 0 7em 0;
+}
+
+@media(max-width: 800px) {
+    .thumbnail__list__palette {
+        display: block;
+        margin: 0;
+        padding: 2em 0 4em 0;
+    }
+
+    .list__img__palette {
+        margin-top: 2em;
+    }
+}

@@ -1,0 +1,30 @@
+.grid__section__home {
+    grid-column: 3/10;
+    padding: 1em;
+}
+
+.section__20color img {
+    display: grid;
+    padding: 3em 0 0 3em;
+    width: 95%;
+}
+
+.section__identity img {
+    display: grid;
+    padding: 7em 0 7em 0em;
+    width: 100%;
+}
+
+@media(max-width: 800px) {
+
+    .grid__section__home {
+        display: block;
+        text-align: center;
+        padding: 0px;
+    }
+
+    .section__20color,
+    .section__identity {
+        padding: 0px;
+    }
+}

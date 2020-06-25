@@ -1,12 +1,6 @@
+<%@page import="org.apache.catalina.startup.HomesUserDatabase"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>PANTONE</title>
-</head>
-<body>
-Pantone 프로젝트 시작
-</body>
-</html>
+<%
+	response.sendRedirect("/pantone/board?cmd=home");
+%>
