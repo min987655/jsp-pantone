@@ -21,7 +21,35 @@ public class MemberRepository {
 	private PreparedStatement pstmt = null;
 	private ResultSet rs = null;
 	
-	
+	public Member findByUsernameAndPassword(String username, String password) {
+		final String SQL = "SELECT id, username, email, userProfile, userRole, createDate FROM member WHERE username = ? AND password =?";
+		Member member = null;
+		
+		try {
+			conn = DBConn.getConnection();
+			pstmt = conn.prepareStatement(SQL);
+			pstmt.setString(1, username);
+			pstmt.setString(2, password);
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				member = Member.builder()
+						.id(rs.getInt("id"))
+						.username(rs.getString("username"))
+						.email(rs.getString("email"))
+						.userProfile(rs.getString("userProfile"))
+						.userRole(rs.getString("userRole"))
+						.createDate(rs.getTimestamp("createDate"))
+						.build();
+			}
+			return member;
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println(TAG + "findByUsernameAndPassword : " + e.getMessage());
+		} finally {
+			DBConn.close(conn, pstmt, rs);
+		}
+		return null;
+	}
 	
 	public int findByUsername(String username) {
 		final String SQL = "SELECT count(*) FROM member WHERE username = ?";

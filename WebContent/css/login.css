@@ -43,7 +43,7 @@ label{
   font-weight: 600;
 }
 
-#id, #password {
+#username, #password {
   background: #fff;
   border: 1px solid #dbdbdb;
   font-size: 1.6em;

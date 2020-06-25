@@ -1,5 +1,4 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -17,10 +16,10 @@
 
 <body>
     <h2>Log In</h2>
-    <form action="#" method="post">
+    <form action="/pantone/member?cmd=loginProc" method="post">
         <p>
             <label class="user__id" for="id">ID</label>
-            <input id="id" name="id" type="text" placeholder="ID" required />
+            <input id="username" name="username" type="text" placeholder="ID" required />
         </p>
         <p>
             <label class="user__password" for="password">Password</label>

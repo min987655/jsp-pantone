@@ -31,16 +31,16 @@
 						<li class="nav__list"><a href="#">FAQ</a></li>
 					</ul>
 					<ul class="nav__util">
-<%-- 						<c:choose> --%>
-<%-- 							<c:when test=""> --%>
+						<c:choose>
+							<c:when test="${empty sessionScope.principal}">
 								<li class="nav__list"><a href="/pantone/member?cmd=signin">Signin</a></li>
 								<li class="nav__list"><a href="/pantone/member?cmd=login">Login</a></li>
-<%-- 							</c:when> --%>
-<%-- 							<c:otherwise> --%>
-								<!--<li class="nav__list"><a href="/pantone/member?cmd=myPage">My Page</a></li>
-                        		<li class="nav__list"><a href="/pantone/member?cmd=logout">Logout</a></li> -->
-<%-- 							</c:otherwise> --%>
-<%-- 						</c:choose> --%>
+							</c:when>
+							<c:otherwise>
+								<li class="nav__list"><a href="/pantone/member?cmd=myPage">My Page</a></li>
+                        		<li class="nav__list"><a href="/pantone/member?cmd=logout">Logout</a></li>
+							</c:otherwise>
+						</c:choose>
 					</ul>
 				</div>
 			</nav>

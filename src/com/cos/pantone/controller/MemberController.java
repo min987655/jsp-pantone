@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.cos.pantone.action.Action;
 import com.cos.pantone.action.member.MemberLoginAction;
+import com.cos.pantone.action.member.MemberLoginProcAction;
 import com.cos.pantone.action.member.MemberSigninAction;
 import com.cos.pantone.action.member.MemberSigninProcAction;
 import com.cos.pantone.action.member.MemberUsernameCheckAction;
@@ -52,6 +53,8 @@ public class MemberController extends HttpServlet {
 			return new MemberSigninProcAction();
 		} else if(cmd.equals("login")) {
 			return new MemberLoginAction();
+		} else if(cmd.equals("loginProc")) {
+			return new MemberLoginProcAction();
 		} else if(cmd.equals("usernameCheck")) {
 			return new MemberUsernameCheckAction();
 		}    
