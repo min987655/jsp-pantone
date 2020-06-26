@@ -29,7 +29,7 @@ header {
 
 .nav__bar {
     display: grid;
-    grid-template-columns: 8.7fr 1.3fr;
+    grid-template-columns: 8.3fr 1.7fr;
     align-items: center;
 }
 
@@ -52,11 +52,19 @@ a {
 .nav__menu a {
     padding: 0em 1em 0em 1em;  
 }
+
 .nav__util {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: auto auto auto;
     justify-content: right;
-    grid-gap: 1.5em;
+    align-items: center;
+    grid-gap: 1.3em;
+}
+
+.nav__userProfile {
+	padding-top : 0.2em;
+	width: 2.3em;
+	border-radius: 70em;
 }
 
 .hr {

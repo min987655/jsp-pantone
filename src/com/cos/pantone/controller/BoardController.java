@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.cos.pantone.action.Action;
 import com.cos.pantone.action.board.BoardHomeAction;
+import com.cos.pantone.action.board.BoardPaletteAction;
 import com.cos.pantone.action.member.MemberSigninAction;
 
 //http://localhost:8000/pantone/board
@@ -46,6 +47,8 @@ public class BoardController extends HttpServlet {
 		System.out.println(TAG + "cmd : " + cmd);
 		if(cmd.equals("home")) {
 			return new BoardHomeAction();
+		} else if(cmd.equals("palette")) {
+			return new BoardPaletteAction();
 		}
 		return null;
 	}

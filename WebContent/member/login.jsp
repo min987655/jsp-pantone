@@ -15,20 +15,22 @@
 </head>
 
 <body>
+	<section class="grid__section__login">
     <h2>Log In</h2>
-    <form action="/pantone/member?cmd=loginProc" method="post">
-        <p>
+    <form class="login__form" action="/pantone/member?cmd=loginProc" method="post">
+        <p class="login__form__item">
             <label class="user__id" for="id">ID</label>
             <input id="username" name="username" type="text" placeholder="ID" required />
         </p>
-        <p>
+        <p class="login__form__item">
             <label class="user__password" for="password">Password</label>
             <input id="password" name="password" type="password" placeholder="Password" required />
         </p>
-        <p>
+        <p class="login__form__item">
             <input type="submit" value="LogIn" id="submit">
         </p>
     </form>
+    </section>
 </body>
 
 </html>

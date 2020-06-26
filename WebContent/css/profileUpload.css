@@ -1,33 +1,41 @@
 
-.grid__section__login {
-  background:white;
+.grid__section__profileUpload {
+  grid-column: 1/13;
+  padding: 0;
   font-family: 'Heebo', sans-serif;
   font-size: 10px;
-  margin-top: 13em;
+  margin: 4.8em 0 0.6em 0;
 }
 
-form {
+.profileUpload__form {
   background: #fff;
   padding: 5em 4em 2em;
   max-width: 400px;
-  margin: 2em auto 0;
+  margin: 2em auto 10em;
   box-shadow: 0 0 0.5em rgb(218, 218, 218);
   border-radius: 2px;
+  width: 65%;
 }
 
-h2 {
+.grid__section__profileUpload h2 {
   margin: .5em 0 0 0;
   text-align: center;
   font-size: 2.2rem;
   color: rgb(77, 77, 77);
 }
 
-p {
+#img__wrap {
+	width: 32em;
+	height: 32em;
+	border-radius: 70em;
+}
+
+.profileUpload__form__item {
   margin: 0 0 3em 0;
   position: relative;
 }
 
-input {
+.profileUpload__form__item input {
   display: block;
   box-sizing: border-box;
   width: 100%;
@@ -35,7 +43,7 @@ input {
   margin:0;
 }
 
-label{
+.profileUpload__form__item label{
   color: rgba(0, 0, 0, 0.7);
   font-size: 0.8rem;
   display: block;
@@ -43,11 +51,11 @@ label{
   font-weight: 600;
 }
 
-#username, #password {
+#img__preview {
   background: #fff;
   border: 1px solid #dbdbdb;
   font-size: 1.6em;
-  padding: .8em .5em;
+  padding: .8em 0 0.3em 0;
   border-radius: 2px;
   border-top: 0;
   border-left: 0;
@@ -55,7 +63,7 @@ label{
   opacity: 60%;
 }
 
-#submit {
+#submit__amend {
   border-radius: 2px;
   border: none;
   color: rgb(206, 171, 150);
@@ -66,9 +74,10 @@ label{
   margin: 2em 0 0;
   outline: none;
   padding: .8em 0;
+  width: 100%
 }
 
-#submit:hover {
+#submit__amend:hover {
   background: rgb(206, 171, 150);
   color: white;
 }

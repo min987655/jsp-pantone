@@ -10,6 +10,11 @@ import javax.servlet.http.HttpServletResponse;
 import com.cos.pantone.action.Action;
 import com.cos.pantone.action.member.MemberLoginAction;
 import com.cos.pantone.action.member.MemberLoginProcAction;
+import com.cos.pantone.action.member.MemberLogoutAction;
+import com.cos.pantone.action.member.MemberMyPageAction;
+import com.cos.pantone.action.member.MemberMyPageProcAction;
+import com.cos.pantone.action.member.MemberProfileUploadAction;
+import com.cos.pantone.action.member.MemberProfileUploadProcAction;
 import com.cos.pantone.action.member.MemberSigninAction;
 import com.cos.pantone.action.member.MemberSigninProcAction;
 import com.cos.pantone.action.member.MemberUsernameCheckAction;
@@ -57,7 +62,17 @@ public class MemberController extends HttpServlet {
 			return new MemberLoginProcAction();
 		} else if(cmd.equals("usernameCheck")) {
 			return new MemberUsernameCheckAction();
-		}    
+		} else if(cmd.equals("logout")) {
+			return new MemberLogoutAction();
+		} else if(cmd.equals("myPage")) {
+			return new MemberMyPageAction();
+		} else if(cmd.equals("myPageProc")) {
+			return new MemberMyPageProcAction();
+		} else if(cmd.equals("profileUpload")) {
+			return new MemberProfileUploadAction();
+		} else if(cmd.equals("profileUploadProc")) {
+			return new MemberProfileUploadProcAction();
+		}
 		return null;
 	}
 

@@ -1,6 +1,9 @@
 
+var isCheckedUsername = false;
+
 function validate() {
-	if (!isCheckedUsername) {
+	
+	if (isCheckedUsername === false) {
 		alert('ID Check를 해주세요.');
 	}
 	return isCheckedUsername;
@@ -8,16 +11,17 @@ function validate() {
 
 function usernameCheck() {
 	
-	var tfUsername = $("#username").val();
+	var tfUsername = $('#username').val();
 	console.log(tfUsername);
-	var usernameReg = /^[\w]{4,12}$/; //아이디와 비밀번호에 사용할 정규표현식
+//	var usernameReg = /^[\w]{4,12}$/; //아이디와 비밀번호에 사용할 정규표현식
 	
 	if (tfUsername=="") {
 		alert('ID를 입력 해주세요.');
 		return false;
-	} else if (!usernameReg.test(tfUsername)) {
-		alert();
-	}
+	} 
+//	else if (!usernameReg.test(tfUsername)) {
+//		alert();
+//	}
 		
 	$.ajax({
 		type : 'get',
@@ -37,9 +41,9 @@ function usernameCheck() {
 		console.log(error);
 	});
 }
-
-function passwordCheck() {
-	
-	var tfPassword = $("#password").val();
-	
-}
+//
+//function passwordCheck() {
+//	
+//	var tfPassword = $("#password").val();
+//	
+//}

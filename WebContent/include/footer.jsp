@@ -3,7 +3,7 @@
 
 <footer>
 	<div class="footer__logo">
-		<a href="/pantone/home.jsp"><img class="logo" src="/pantone/image/logo_w.png" alt="Logo" /></a>
+		<a href="/pantone/index.jsp"><img class="logo" src="/pantone/image/logo_w.png" alt="Logo" /></a>
 	</div>
 	<div class="privacy">
 		<a href="#">개인정보처리방침</a>

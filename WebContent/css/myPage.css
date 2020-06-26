@@ -1,33 +1,35 @@
 
-.grid__section__login {
-  background:white;
+.grid__section__myPage {
+  grid-column: 1/13;
+  padding: 0;
   font-family: 'Heebo', sans-serif;
   font-size: 10px;
-  margin-top: 13em;
+  margin: 4.8em 0 0.6em 0;
 }
 
-form {
+.myPage__form {
   background: #fff;
   padding: 5em 4em 2em;
   max-width: 400px;
-  margin: 2em auto 0;
+  margin: 2em auto 10em;
   box-shadow: 0 0 0.5em rgb(218, 218, 218);
   border-radius: 2px;
+  width: 65%;
 }
 
-h2 {
+.grid__section__myPage h2 {
   margin: .5em 0 0 0;
   text-align: center;
   font-size: 2.2rem;
   color: rgb(77, 77, 77);
 }
 
-p {
+.myPage__form__item {
   margin: 0 0 3em 0;
   position: relative;
 }
 
-input {
+.myPage__form__item input {
   display: block;
   box-sizing: border-box;
   width: 100%;
@@ -35,7 +37,7 @@ input {
   margin:0;
 }
 
-label{
+.myPage__form__item label{
   color: rgba(0, 0, 0, 0.7);
   font-size: 0.8rem;
   display: block;
@@ -43,7 +45,7 @@ label{
   font-weight: 600;
 }
 
-#username, #password {
+#username, #email, #password, #confirm__password {
   background: #fff;
   border: 1px solid #dbdbdb;
   font-size: 1.6em;
@@ -55,7 +57,27 @@ label{
   opacity: 60%;
 }
 
-#submit {
+#btn {
+  border-radius: 2px;
+  border: none;
+  color: rgb(206, 171, 150);
+  cursor: pointer;
+  display: inline-block;
+  width: 32%;
+  font-size: 2em;
+  line-height: 1.4em;
+  margin-left: .5em;
+  outline: none;
+  padding: .7em 0;
+  font-size: 1rem;
+}
+
+#btn:hover {
+  background: rgb(206, 171, 150);
+  color: white;
+}
+
+#submit__amend {
   border-radius: 2px;
   border: none;
   color: rgb(206, 171, 150);
@@ -68,7 +90,7 @@ label{
   padding: .8em 0;
 }
 
-#submit:hover {
+#submit__amend:hover {
   background: rgb(206, 171, 150);
   color: white;
 }
