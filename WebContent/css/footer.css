@@ -5,23 +5,19 @@ footer {
     text-align: center;
     justify-content: center;
     align-items: center;
-    padding: 1em 13em 1em 13em;
+    padding: 1em 7em 1em 7em;
     background-color: rgb(86, 86, 92);
     color: rgb(165, 165, 165);
 }
 
 .footer__logo {
     grid-column: 1/2;
-}
-
-.footer__logo img {
-    margin-right: 10em;
-    margin-left: 1.5em;
+    text-align: left;
 }
 
 .privacy {
     grid-column: 2/3;  
-    padding-left: 3em; 
+    text-align: right;
 }
 
 .privacy a {
@@ -30,7 +26,8 @@ footer {
 
 .copy {
     grid-column: 3/4;
-    padding-right: 2em;
+    text-align: left;
+    padding-left: 3em;
 }
 
 .footer__sns {
@@ -41,10 +38,12 @@ footer {
 
 .footer__sns a {
     padding-right: 0.6em;
+    padding-top: .3em;
 }
 
 .logo {
     width: 9em;
+    padding-top: .3em;
 }
 
 footer a:visited {color: rgb(165, 165, 165);}

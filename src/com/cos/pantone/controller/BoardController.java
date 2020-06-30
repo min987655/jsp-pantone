@@ -6,10 +6,13 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.cos.pantone.action.Action;
 import com.cos.pantone.action.board.BoardHomeAction;
 import com.cos.pantone.action.board.BoardPaletteAction;
+import com.cos.pantone.action.board.BoardWriteAction;
+import com.cos.pantone.action.board.BoardWriteProcAction;
 import com.cos.pantone.action.member.MemberSigninAction;
 
 //http://localhost:8000/pantone/board
@@ -35,6 +38,8 @@ public class BoardController extends HttpServlet {
 	
 	protected void doProcess(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		HttpSession session = request.getSession();
+		session.setAttribute("path", request.getContextPath());
 		// http://localhost:8000/pantone/user?cmd=
 		String cmd = request.getParameter("cmd");
 		System.out.println(TAG + "doProcess : " + cmd);
@@ -49,6 +54,10 @@ public class BoardController extends HttpServlet {
 			return new BoardHomeAction();
 		} else if(cmd.equals("palette")) {
 			return new BoardPaletteAction();
+		} else if(cmd.equals("write")) {
+			return new BoardWriteAction();
+		} else if(cmd.equals("writeProc")) {
+			return new BoardWriteProcAction();
 		}
 		return null;
 	}
