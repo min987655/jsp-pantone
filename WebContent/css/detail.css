@@ -87,3 +87,22 @@
 	background: rgb(206, 171, 150);
 	color: white;
 }
+
+.reply__userProfile {
+	display: grid;
+	grid-template-columns: repeat(30, 1fr);
+	grid-template-rows: repeat(2, 1fr);
+	grid-auto-flow: row;
+	margin-bottom: 2em;
+}
+
+.reply__userProfile__img img {
+	width: 2em;
+}
+
+.reply__userProfile__img {
+	grid-column: 3/4;
+	grid-row: 1/3;
+}
+
+

@@ -18,6 +18,22 @@
 			</c:if>
 		</div>
 	</article>
+
+	<article class="board__reply">
+		<div class="reply__pattern">
+			<ul class="reply__list">
+				<li class="reply">
+					<div class="reply__userProfile">
+						<div class="reply__userProfile__img"><img src="#" alt="userProfile" onerror="this.src='/pantone/image/userProfile.png'" /></div>
+						<div class="reply__username">username</div>
+						<div class="reply__createDate">createDate</div>
+						<div class="reply__content">content</div>
+						<button class="reply__delete__button" onclick="#">Delete</button>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</article>
 </section>
 
 <script src="/pantone/js/detail.js"></script>

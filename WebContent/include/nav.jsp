@@ -30,9 +30,11 @@
 <body>
 	<div class="container">
 		<header>
-			<a href="/pantone/index.jsp"> <img class="header__logo" src="/pantone/image/logo.png" alt="Logo" />
+			<a href="/pantone/index.jsp"> 
+				<img class="header__logo" src="/pantone/image/logo.png" alt="Logo" />
 			</a> 
-			<a href="#" class="hamburger"> <img src="/pantone/image/hamburger.png">
+			<a href="#" class="hamburger"> 
+				<img src="/pantone/image/hamburger.png">
 			</a>
 			<nav>
 				<div class="nav__bar">
@@ -62,8 +64,7 @@
 							</c:when>
 							<c:otherwise>
 								<li class="nav__list">
-									<a href="/pantone/member?cmd=profileUpload"> <img class="nav__userProfile"
-											onerror="this.src='/pantone/image/userProfile.png'" src="${sessionScope.principal.userProfile}" />
+									<a href="/pantone/member?cmd=profileUpload"> <img class="nav__userProfile" onerror="this.src='/pantone/image/userProfile.png'" src="${sessionScope.principal.userProfile}" />
 									</a>
 								</li>
 								<li class="nav__list">
