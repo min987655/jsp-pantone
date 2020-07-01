@@ -28,6 +28,13 @@ public class BoardDetailAction implements Action {
 		int boardId = Integer.parseInt(request.getParameter("id"));
 		BoardRepository boardRepository =  BoardRepository.getInstance();
 		
+		int result = boardRepository.updateReadCount(boardId);
+		
+		if (result != 1) {
+			Script.back("서버 오류", response);
+			return;
+		}
+		
 		DetailResponseDto dto = boardRepository.findById(boardId);
 		System.out.println("BoardDetailAction : dto : " + dto);
 		
