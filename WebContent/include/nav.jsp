@@ -21,6 +21,7 @@
 <link rel="stylesheet" href="/pantone/css/profileUpload.css">
 <link rel="stylesheet" href="/pantone/css/write.css">
 <link rel="stylesheet" href="/pantone/css/update.css">
+<link rel="stylesheet" href="/pantone/css/detail.css">
 <link rel="stylesheet" href="/pantone/css/summernote/summernote-lite.css">
 
 <title>PANTONE</title>

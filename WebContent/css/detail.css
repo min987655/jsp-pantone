@@ -1,0 +1,89 @@
+.grid__section__detail {
+	grid-column: 1/13;
+	padding: 0;
+	font-family: 'Heebo', sans-serif;
+	font-size: 10px;
+	margin: 0em 0 0.6em 0;
+	background-color: white;
+}
+
+.detail__info {
+	display: grid;
+	grid-template-columns: repeat(15, 1fr);
+	margin-bottom: 2em;
+}
+
+.detail__boardname {
+	grid-column : 2/15;
+	font-size: 1rem;
+	color: #727272;
+	padding: 3.5em 0 0 .2em; 
+}
+
+.info__title {
+	grid-column: 2/15;
+	font-size: 2.4rem;
+	padding: 0 0 .5em .01em;
+}
+
+.info__writter {
+	grid-column: 2/3;
+	font-size: 1rem;
+	padding-left: .2em;
+	color: #5c5c5c;
+}
+
+.info__readCount {
+	grid-column: 3/4;
+	font-size: 1rem;
+	color: #5c5c5c;
+}
+
+.info__createDate {
+	grid-column: 13/15;
+	font-size: 1rem;
+	text-align: right;
+	padding-right: 0.1em;
+	color: #5c5c5c;
+}
+
+.detail__content {
+	grid-column: 2/15;
+	font-size: 1rem;
+	margin-top: 1em;
+	padding: 1em 0 0 .2em;
+	border-style: solid;
+	border-color: #c5c5c5;
+	border-right: none;
+	border-left: none; 
+	height: 20em;
+	border-width: .05em;
+}
+
+.info__update__button {
+	grid-column: 13/14;		
+}
+
+.info__delete__button {
+	grid-column: 14/15;
+}
+
+.info__update__button,
+.info__delete__button {
+	border-radius: 2px;
+	border: none;
+	color: rgb(206, 171, 150);
+	cursor: pointer;
+	font-size: 1.1rem;
+	line-height: 1.6em;
+	padding: .2em;
+	margin-top: 2em;
+	width: 6em;
+	margin-left: .5em; 
+}
+
+.info__update__button:hover,
+.info__delete__button:hover {
+	background: rgb(206, 171, 150);
+	color: white;
+}
