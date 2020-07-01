@@ -11,6 +11,7 @@
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	padding: 7em 0 7em 0;
+	justify-items: center;
 }
 
 .palette__write {
@@ -37,7 +38,7 @@
 
 .palette__write__button {
 	grid-column: 7/8;
-	margin-left: 2em;
+	margin-left: 1.4em;
 }
 
 #palette__write__submit {

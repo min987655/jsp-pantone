@@ -58,7 +58,7 @@ public class BoardWriteProcAction implements Action {
 		int result = boardRepository.save(board);
 		
 		if (result == 1) {
-			Script.href("글쓰기에 성공하였습니다.", "board?cmd=palette", response);
+			Script.href("글쓰기에 성공하였습니다.", "board?cmd=palette&page=0", response);
 		} else {
 			Script.back("글쓰기에 실패하였습니다.", response);
 		}

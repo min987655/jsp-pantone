@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.cos.pantone.action.Action;
+import com.cos.pantone.action.board.BoardDeleteAction;
+import com.cos.pantone.action.board.BoardDetailAction;
 import com.cos.pantone.action.board.BoardHomeAction;
 import com.cos.pantone.action.board.BoardPaletteAction;
 import com.cos.pantone.action.board.BoardWriteAction;
@@ -42,7 +44,6 @@ public class BoardController extends HttpServlet {
 		session.setAttribute("path", request.getContextPath());
 		// http://localhost:8000/pantone/user?cmd=
 		String cmd = request.getParameter("cmd");
-		System.out.println(TAG + "doProcess : " + cmd);
 		Action action = router(cmd);
 		System.out.println(TAG + "action : " + action);
 		action.execute(request, response);
@@ -58,7 +59,11 @@ public class BoardController extends HttpServlet {
 			return new BoardWriteAction();
 		} else if(cmd.equals("writeProc")) {
 			return new BoardWriteProcAction();
-		}
+		} else if(cmd.equals("detail")) {
+			return new BoardDetailAction();
+		} else if(cmd.equals("delete")) {
+			return new BoardDeleteAction();
+		} 
 		return null;
 	}
 
