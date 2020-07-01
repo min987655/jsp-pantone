@@ -2,7 +2,6 @@ package com.cos.pantone.action.board;
 
 import java.io.IOException;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -14,9 +13,9 @@ import com.cos.pantone.model.Member;
 import com.cos.pantone.repository.BoardRepository;
 import com.cos.pantone.utill.Script;
 
-public class BoardWriteProcAction implements Action {
+public class BoardUpdateProcAction implements Action {
 	
-	private static final String TAG = "BoardWriteProcAction : ";
+	private static final String TAG = "BoardUpdateProcAction : ";
 	
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -32,6 +31,8 @@ public class BoardWriteProcAction implements Action {
 		// 1. 유효성 검사
 		if 
 		(
+				request.getParameter("id").equals("") ||
+				request.getParameter("id")==null ||
 				request.getParameter("title").equals("") ||
 				request.getParameter("title")==null ||
 				request.getParameter("content").equals("") ||
@@ -41,12 +42,13 @@ public class BoardWriteProcAction implements Action {
 		}
 		
 		// 2. request에 title값과 content값 받기
+		int id = Integer.parseInt(request.getParameter("id"));
 		String title = request.getParameter("title");
 		String content = request.getParameter("content");
 
 		// 3. title값과 content값, principal.getId()값을 Board 오브젝트에 담기
 		Board board = Board.builder()
-				.memberId(principal.getId())
+			    .id(id)
 				.title(title)
 				.content(content)
 				.readCount(0)
@@ -55,12 +57,12 @@ public class BoardWriteProcAction implements Action {
 		
 		// 4. BoardRepository 연결해서 save(board)함수 호출
 		BoardRepository boardRepository = BoardRepository.getInstance();
-		int result = boardRepository.save(board);
+		int result = boardRepository.update(board);
 		
 		if (result == 1) {
-			Script.href("글쓰기에 성공하였습니다.", "/pantone/board?cmd=palette&page=0", response);
+			Script.href("글수정에 성공하였습니다.", "/pantone/board?cmd=detail&id="+id, response);
 		} else {
-			Script.back("글쓰기에 실패하였습니다.", response);
+			Script.back("글수정에 실패하였습니다.", response);
 		}
 		
 	}

@@ -25,13 +25,32 @@ public class BoardRepository {
 	private PreparedStatement pstmt = null;
 	private ResultSet rs = null;
 	
-	public int deleteById(int boardId) {
-		System.out.println(TAG + "deleteById : boardId : " + boardId );
+	public int update(Board board) {
+		final String SQL = "UPDATE board SET title = ?, content = ? WHERE id = ?";
+		try {
+			conn = DBConn.getConnection();
+			pstmt = conn.prepareStatement(SQL);
+
+			pstmt.setString(1, board.getTitle());
+			pstmt.setString(2, board.getContent());
+			pstmt.setInt(3, board.getId());
+			return pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println(TAG + "update : " + e.getMessage());
+		} finally {
+			DBConn.close(conn, pstmt);
+		}
+		return -1;
+	}
+	
+	public int deleteById(int id) {
+		System.out.println(TAG + "deleteById : boardId : " + id );
 		final String SQL = "DELETE FROM board WHERE id = ?";
 		try {
 			conn = DBConn.getConnection();
 			pstmt = conn.prepareStatement(SQL);
-			pstmt.setInt(1, boardId);
+			pstmt.setInt(1, id);
 			
 			return pstmt.executeUpdate();
 		} catch (Exception e) {
@@ -43,7 +62,7 @@ public class BoardRepository {
 		return -1;
 	}
 	
-	public DetailResponseDto findById(int boardId) {
+	public DetailResponseDto findById(int id) {
 		StringBuilder sb = new StringBuilder();
 		sb.append("SELECT b.id, b.memberId, b.title, b.content, b.readcount, b.likeCount, b.createDate, m.username ");
 		sb.append("FROM board b INNER JOIN member m ");
@@ -56,7 +75,7 @@ public class BoardRepository {
 		try {
 			conn = DBConn.getConnection();
 			pstmt = conn.prepareStatement(SQL);
-			pstmt.setInt(1, boardId);
+			pstmt.setInt(1, id);
 			
 			rs = pstmt.executeQuery();
 			if (rs.next()) {

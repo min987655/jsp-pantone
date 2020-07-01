@@ -10,7 +10,7 @@
 	<form class="write__form" action="/pantone/board?cmd=writeProc" method="POST">
 
 		<div class="write__form__bar">
-			<input id="title" name="title" type="text" class="write__title" placeholder=" Title" /> 
+			<input id="title" name="title" type="text" class="write__title" placeholder=" Title" />
 			<input type="submit" value="Write" id="write__submit">
 		</div>
 		<p class="write__form__item">

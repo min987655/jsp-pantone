@@ -13,6 +13,8 @@ import com.cos.pantone.action.board.BoardDeleteAction;
 import com.cos.pantone.action.board.BoardDetailAction;
 import com.cos.pantone.action.board.BoardHomeAction;
 import com.cos.pantone.action.board.BoardPaletteAction;
+import com.cos.pantone.action.board.BoardUpdateAction;
+import com.cos.pantone.action.board.BoardUpdateProcAction;
 import com.cos.pantone.action.board.BoardWriteAction;
 import com.cos.pantone.action.board.BoardWriteProcAction;
 import com.cos.pantone.action.member.MemberSigninAction;
@@ -63,7 +65,11 @@ public class BoardController extends HttpServlet {
 			return new BoardDetailAction();
 		} else if(cmd.equals("delete")) {
 			return new BoardDeleteAction();
-		} 
+		} else if(cmd.equals("update")) {
+			return new BoardUpdateAction();
+		} else if(cmd.equals("updateProc")) {
+			return new BoardUpdateProcAction();
+		}
 		return null;
 	}
 

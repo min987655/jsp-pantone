@@ -11,9 +11,9 @@
 			<div class="info__writter">${dto.username}</div>
 			<div class="info__readCount">${dto.board.readCount}</div>
 			<div class="info__createDate">${dto.board.createDate}</div>
-			
+
 			<c:if test="${sessionScope.principal.id == dto.board.memberId}">
-				<button class="info__update__button" onclick="location.href = '/pantone/board?cmd=update&id=${dto.board.memberId}';">수정</button>
+				<button class="info__update__button" onclick="location.href = '/pantone/board?cmd=update&id=${dto.board.id}';">수정</button>
 				<button class="info__delete__button" onclick="deleteById(${dto.board.id})">삭제</button>
 			</c:if>
 		</div>
