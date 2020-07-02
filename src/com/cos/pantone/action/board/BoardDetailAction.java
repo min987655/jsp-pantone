@@ -35,11 +35,11 @@ public class BoardDetailAction implements Action {
 			return;
 		}
 		
-		DetailResponseDto dto = boardRepository.findById(boardId);
-		System.out.println("BoardDetailAction : dto : " + dto);
+		DetailResponseDto detailDto = boardRepository.findById(boardId);
+		System.out.println("BoardDetailAction : dto : " + detailDto);
 		
-		if (dto != null) {
-			request.setAttribute("dto", dto);
+		if (detailDto != null) {
+			request.setAttribute("detailDto", detailDto);
 			RequestDispatcher dis = request.getRequestDispatcher("board/detail.jsp");
 			dis.forward(request, response);
 		} else {

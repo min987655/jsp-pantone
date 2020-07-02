@@ -7,14 +7,14 @@
 	<article class="board__detail">
 		<div class="detail__info">
 			<div class="detail__boardname">Palette</div>
-			<div class="info__title">${dto.board.title}</div>
-			<div class="info__writter">${dto.username}</div>
-			<div class="info__readCount">조회수 : ${dto.board.readCount}</div>
-			<div class="info__createDate">${dto.board.createDate}</div>
-			<div class="detail__content">${dto.board.content}</div>
-			<c:if test="${sessionScope.principal.id == dto.board.memberId}">
-				<button class="info__update__button" onclick="location.href = '/pantone/board?cmd=update&id=${dto.board.id}';">Update</button>
-				<button class="info__delete__button" onclick="deleteById(${dto.board.id})">Delete</button>
+			<div class="info__title">${detailDto.board.title}</div>
+			<div class="info__writter">${detailDto.username}</div>
+			<div class="info__readCount">조회수 : ${detailDto.board.readCount}</div>
+			<div class="info__createDate">${detailDto.board.createDate}</div>
+			<div class="detail__content">${detailDto.board.content}</div>
+			<c:if test="${sessionScope.principal.id == detailDto.board.memberId}">
+				<button class="info__update__button" onclick="location.href = '/pantone/board?cmd=update&id=${detailDto.board.id}';">Update</button>
+				<button class="info__delete__button" onclick="deleteById(${detailDto.board.id})">Delete</button>
 			</c:if>
 		</div>
 	</article>
@@ -24,7 +24,10 @@
 			<ul class="reply__list">
 				<li class="reply">
 					<div class="reply__userProfile">
-						<div class="reply__userProfile__img"><img src="#" alt="userProfile" onerror="this.src='/pantone/image/userProfile.png'" /></div>
+						<hr class="reply__hr" />
+						<div class="reply__userProfile__img">
+							<img src="#" alt="userProfile" onerror="this.src='/pantone/image/userProfile.png'" />
+						</div>
 						<div class="reply__username">username</div>
 						<div class="reply__createDate">createDate</div>
 						<div class="reply__content">content</div>
@@ -32,6 +35,27 @@
 					</div>
 				</li>
 			</ul>
+			<ul class="reply__list">
+				<li class="reply">
+					<div class="reply__userProfile">
+						<hr class="reply__hr" />
+						<div class="reply__userProfile__img">
+							<img src="#" alt="userProfile" onerror="this.src='/pantone/image/userProfile.png'" />
+						</div>
+						<div class="reply__username">username</div>
+						<div class="reply__createDate">createDate</div>
+						<div class="reply__content">content</div>
+						<button class="reply__delete__button" onclick="#">Delete</button>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="reply__write">
+			<div class="reply__write__box">
+				<div class="reply__write__username">username</div>
+				<textarea class="reply__write__form" id="reply__write__form" placeholder="reply content..." rows="3"></textarea>
+				<button class="reply__write__button" onclick="#">Write</button>
+			</div>
 		</div>
 	</article>
 </section>

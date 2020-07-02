@@ -28,11 +28,11 @@ public class BoardUpdateAction implements Action {
 		int boardId = Integer.parseInt(request.getParameter("id"));
 		BoardRepository boardRepository =  BoardRepository.getInstance();
 		
-		DetailResponseDto dto = boardRepository.findById(boardId);
-		System.out.println("BoardUpdateAction : dto : " + dto);
+		DetailResponseDto detailDto = boardRepository.findById(boardId);
+		System.out.println("BoardUpdateAction : dto : " + detailDto);
 		
-		if (dto != null) {
-			request.setAttribute("dto", dto);
+		if (detailDto != null) {
+			request.setAttribute("dto", detailDto);
 			RequestDispatcher dis = request.getRequestDispatcher("board/update.jsp");
 			dis.forward(request, response);
 		}

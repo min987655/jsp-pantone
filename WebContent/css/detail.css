@@ -3,7 +3,7 @@
 	padding: 0;
 	font-family: 'Heebo', sans-serif;
 	font-size: 10px;
-	margin: 0em 0 0.6em 0;
+	margin: 0;
 	background-color: white;
 }
 
@@ -52,10 +52,11 @@
 	font-size: 1rem;
 	margin-top: 1em;
 	padding: 1em 0 0 .2em;
-	border-style: solid;
+/* 	border-style: solid; */
+	border-top-style: solid;
 	border-color: #c5c5c5;
-	border-right: none;
-	border-left: none; 
+/* 	border-right: none; */
+/* 	border-left: none;  */
 	min-height : 30em;
 	border-width: .05em;
 }
@@ -88,21 +89,106 @@
 	color: white;
 }
 
+.reply__hr {
+	margin-bottom: 2.5em;
+	grid-column: 3/29;
+	grid-row: 1/2;
+	border: 0 none;
+	color: #d8d8d8;
+	height: .1em;
+	background-color: #d8d8d8; 
+}
+
 .reply__userProfile {
 	display: grid;
 	grid-template-columns: repeat(30, 1fr);
-	grid-template-rows: repeat(2, 1fr);
-	grid-auto-flow: row;
+	grid-template-rows: repeat(3, auto);
+	grid-auto-flow: column;
 	margin-bottom: 2em;
 }
 
 .reply__userProfile__img img {
-	width: 2em;
+	width: 4em;
 }
 
 .reply__userProfile__img {
 	grid-column: 3/4;
-	grid-row: 1/3;
+	grid-row: 2/4;
+	align-self: center;
 }
 
+.reply__username {
+	grid-column: 4/5;
+	font-size: .8rem;
+}
 
+.reply__createDate {
+	grid-column: 5/7;
+	font-size: .8rem;
+}		
+	
+.reply__content {
+	grid-column: 4/25;
+	font-size: 1rem;
+}
+
+.reply__delete__button {
+	grid-column: 28/29;
+	grid-row: 2/4;
+	width: 5em;
+	height: 2.5em;
+	align-self: center;
+	border-radius: 2px;
+	border: none;
+	cursor: pointer;
+	color: rgb(206, 171, 150);
+	font-size: .9rem;
+}	
+
+.reply__delete__button:hover {
+	background: rgb(206, 171, 150);
+	color: white;
+}		
+
+.reply__write {
+	display: grid;
+	grid-template-columns: repeat(30, 1fr);
+	margin-bottom: 2em;
+}
+
+.reply__write__box {
+	grid-column: 3/29;
+	display: grid;
+	grid-template-columns: 1fr;
+	padding: 1em;
+	border: solid;
+	border-width: .1em;
+	border-color: #d8d8d8;
+	border-radius: 1em;
+	margin-top: 1em;
+	margin-bottom: 4em;
+}
+
+.reply__write__username {
+	grid-column: 1/3;
+	font-size: .8rem;
+}
+
+.reply__write__form {
+	grid-column: 1/2;
+	font-size: .8rem;
+	border: none;
+}		
+	
+.reply__write__button {
+	grid-column: 2/3;
+	padding-left: .5em;
+	align-self: center;
+	border-radius: 2px;
+	border: none;
+	cursor: pointer;
+	color: #6e6e6e;
+	background-color: white;
+	font-size: 1rem;
+	align-self: end;
+}

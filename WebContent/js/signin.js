@@ -41,9 +41,4 @@ function usernameCheck() {
 		console.log(error);
 	});
 }
-//
-//function passwordCheck() {
-//	
-//	var tfPassword = $("#password").val();
-//	
-//}
+

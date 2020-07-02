@@ -140,7 +140,7 @@ public class BoardRepository {
 	
 	public List<Board> findAll(int page) {
 		StringBuilder sb = new StringBuilder();
-		sb.append("SELECT /*+ INDEX_DESC(BOARD SYS_C0010215)*/id, ");
+		sb.append("SELECT /*+ INDEX_DESC(BOARD SYS_C007733)*/id, ");
 		sb.append("memberId, title, content, readCount, likeCount, createDate ");
 		sb.append("FROM board ");
 		sb.append("OFFSET ? ROWS FETCH NEXT 9 ROWS ONLY");
