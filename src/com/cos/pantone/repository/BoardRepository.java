@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.cos.pantone.db.DBConn;
+import com.cos.pantone.dto.BoardResponseDto;
 import com.cos.pantone.dto.DetailResponseDto;
 import com.cos.pantone.model.Board;
 import com.cos.pantone.model.Member;
@@ -79,7 +80,7 @@ public class BoardRepository {
 		return -1;
 	}
 	
-	public DetailResponseDto findById(int id) {
+	public BoardResponseDto findById(int id) {
 		StringBuilder sb = new StringBuilder();
 		sb.append("SELECT b.id, b.memberId, b.title, b.content, b.readcount, b.likeCount, b.createDate, m.username ");
 		sb.append("FROM board b INNER JOIN member m ");
@@ -87,7 +88,7 @@ public class BoardRepository {
 		sb.append("WHERE b.id = ?");
 		
 		final String SQL = sb.toString();
-		DetailResponseDto dto = null;
+		BoardResponseDto boardDto = null;
 		
 		try {
 			conn = DBConn.getConnection();
@@ -96,7 +97,7 @@ public class BoardRepository {
 			
 			rs = pstmt.executeQuery();
 			if (rs.next()) {
-				dto = new DetailResponseDto();
+				boardDto = new BoardResponseDto();
 				Board board = Board.builder()
 						.id(rs.getInt(1))
 						.memberId(rs.getInt(2))
@@ -107,10 +108,10 @@ public class BoardRepository {
 						.createDate(rs.getTimestamp(7))
 						.build();
 				
-				dto.setBoard(board);
-				dto.setUsername(rs.getString(8));
+				boardDto.setBoard(board);
+				boardDto.setUsername(rs.getString(8));
 			};
-			return dto;
+			return boardDto;
 		} catch (Exception e) {
 			e.printStackTrace();
 			System.out.println(TAG + "findById : " + e.getMessage());

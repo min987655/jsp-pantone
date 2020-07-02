@@ -45,7 +45,7 @@ public class MemberController extends HttpServlet {
 			throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		session.setAttribute("path", request.getContextPath());
-		// http://localhost:8000/pantone/user?cmd=
+		// http://localhost:8000/pantone/member?cmd=
 		String cmd = request.getParameter("cmd");
 		System.out.println(TAG + "doProcess : " + cmd);
 		Action action = router(cmd);

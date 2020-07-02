@@ -9,13 +9,13 @@
 	<div class="my__palette__update">My Palette Update</div>
 	<form class="update__form" action="/pantone/board?cmd=updateProc" method="POST">
 		
-		<input type="hidden" value="${detailDto.board.id}" name="id">
+		<input type="hidden" value="${boardDto.board.id}" name="id">
 		<div class="write__form__bar">
-			<input value="${detailDto.board.title}" id="title" name="title" type="text" class="update__title" placeholder=" Title" />
+			<input value="${boardDto.board.title}" id="title" name="title" type="text" class="update__title" placeholder=" Title" />
 			<input type="submit" value="Update" id="update__submit">
 		</div>
 		<p class="write__form__item">
-			<textarea id="summernote" name="content" id="content" class="write__content" rows="5" placeholder="Content">${detailDto.board.content}</textarea>
+			<textarea id="summernote" name="content" id="content" class="write__content" rows="5" placeholder="Content">${boardDto.board.content}</textarea>
 		</p>
 	
 	</form>

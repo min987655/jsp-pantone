@@ -6,74 +6,14 @@
 	<article class="section__thumbnail">
 		<div class="thumbnail__pattern">
 			<ul class="thumbnail__list__faq">
-				<li>
-					<div class="list__text__faq">
-						<h4 class="list__head">제목</h4>
-						<p class="list__sub">keyword</p>
-					</div> </a>
-				</li>
-				<li>
-
-					<div class="list__text__faq">
-						<h4 class="list__head">제목</h4>
-						<p class="list__sub">keyword</p>
-					</div> </a>
-				</li>
-				<li>
-
-					<div class="list__text__faq">
-						<h4 class="list__head">제목</h4>
-						<p class="list__sub">keyword</p>
-					</div> </a>
-				</li>
-				<li>
-
-					<div class="list__text__faq">
-						<h4 class="list__head">제목</h4>
-						<p class="list__sub">keyword</p>
-					</div> </a>
-				</li>
-				<li>
-
-					<div class="list__text__faq">
-						<h4 class="list__head">제목</h4>
-						<p class="list__sub">keyword</p>
-					</div> </a>
-				</li>
-				<li>
-
-					<div class="list__text__faq">
-						<h4 class="list__head">제목</h4>
-						<p class="list__sub">keyword</p>
-					</div> </a>
-				</li>
-				<li>
-
-					<div class="list__text__faq">
-						<h4 class="list__head">제목</h4>
-						<p class="list__sub">keyword</p>
-					</div> </a>
-				</li>
-				<li>
-
-					<div class="list__text__faq">
-						<h4 class="list__head">제목</h4>
-						<p class="list__sub">keyword</p>
-					</div> </a>
-				</li>
-				<li>
-
-					<div class="list__text__faq">
-						<h4 class="list__head">제목</h4>
-						<p class="list__sub">keyword</p>
-					</div> </a>
-				</li>
-				<li>
-					<div class="list__text__faq">
-						<h4 class="list__head">제목</h4>
-						<p class="list__sub">keyword</p>
-					</div> </a>
-				</li>
+				<c:forEach var="" items="">
+					<li>
+						<div class="list__text__faq">
+							<h4 class="list__head">제목</h4>
+							<p class="list__sub">keyword</p>
+						</div>
+					</li>
+				</c:forEach>
 			</ul>
 		</div>
 	</article>

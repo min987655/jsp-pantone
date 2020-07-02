@@ -11,7 +11,6 @@ import javax.servlet.http.HttpSession;
 import com.cos.pantone.action.Action;
 import com.cos.pantone.action.board.BoardDeleteAction;
 import com.cos.pantone.action.board.BoardDetailAction;
-import com.cos.pantone.action.board.BoardFAQAction;
 import com.cos.pantone.action.board.BoardHomeAction;
 import com.cos.pantone.action.board.BoardPaletteAction;
 import com.cos.pantone.action.board.BoardUpdateAction;
@@ -19,14 +18,16 @@ import com.cos.pantone.action.board.BoardUpdateProcAction;
 import com.cos.pantone.action.board.BoardWriteAction;
 import com.cos.pantone.action.board.BoardWriteProcAction;
 import com.cos.pantone.action.member.MemberSigninAction;
+import com.cos.pantone.action.reply.ReplyDeleteProcAction;
+import com.cos.pantone.action.reply.ReplyWriteProcAction;
 
-//http://localhost:8000/pantone/board
-@WebServlet("/board")
-public class BoardController extends HttpServlet {
-	private final static String TAG = "BoardController : ";
+//http://localhost:8000/pantone/reply
+@WebServlet("/reply")
+public class ReplyController extends HttpServlet {
+	private final static String TAG = "ReplyController : ";
 	private static final long serialVersionUID = 1L;
 
-	public BoardController() {
+	public ReplyController() {
 		super();
 	}
 
@@ -45,7 +46,7 @@ public class BoardController extends HttpServlet {
 			throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		session.setAttribute("path", request.getContextPath());
-		// http://localhost:8000/pantone/board?cmd=
+		// http://localhost:8000/pantone/reply?cmd=
 		String cmd = request.getParameter("cmd");
 		Action action = router(cmd);
 		System.out.println(TAG + "action : " + action);
@@ -54,24 +55,10 @@ public class BoardController extends HttpServlet {
 	
 	public Action router(String cmd) {
 		System.out.println(TAG + "cmd : " + cmd);
-		if(cmd.equals("home")) {
-			return new BoardHomeAction();
-		} else if(cmd.equals("palette")) {
-			return new BoardPaletteAction();
-		} else if(cmd.equals("write")) {
-			return new BoardWriteAction();
-		} else if(cmd.equals("writeProc")) {
-			return new BoardWriteProcAction();
-		} else if(cmd.equals("detail")) {
-			return new BoardDetailAction();
-		} else if(cmd.equals("delete")) {
-			return new BoardDeleteAction();
-		} else if(cmd.equals("update")) {
-			return new BoardUpdateAction();
-		} else if(cmd.equals("updateProc")) {
-			return new BoardUpdateProcAction();
-		} else if(cmd.equals("faq")) {
-			return new BoardFAQAction();
+		if(cmd.equals("writeProc")) {
+			return new ReplyWriteProcAction();
+		} else if (cmd.equals("deleteProc")) {
+			return new ReplyDeleteProcAction();
 		}
 		return null;
 	}

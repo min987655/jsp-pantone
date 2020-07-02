@@ -49,7 +49,7 @@
 							<a href="/pantone/board?cmd=palette&page=0">Palette</a>
 						</li>
 						<li class="nav__list">
-							<a href="#">FAQ</a>
+							<a href="/pantone/board?cmd=faq">FAQ</a>
 						</li>
 					</ul>
 					<ul class="nav__util">

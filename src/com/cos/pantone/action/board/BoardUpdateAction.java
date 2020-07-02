@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.cos.pantone.action.Action;
+import com.cos.pantone.dto.BoardResponseDto;
 import com.cos.pantone.dto.DetailResponseDto;
 import com.cos.pantone.repository.BoardRepository;
 import com.cos.pantone.utill.Script;
@@ -28,11 +29,11 @@ public class BoardUpdateAction implements Action {
 		int boardId = Integer.parseInt(request.getParameter("id"));
 		BoardRepository boardRepository =  BoardRepository.getInstance();
 		
-		DetailResponseDto detailDto = boardRepository.findById(boardId);
-		System.out.println("BoardUpdateAction : dto : " + detailDto);
+		BoardResponseDto boardDto = boardRepository.findById(boardId);
+		System.out.println("BoardUpdateAction : boardDto : " + boardDto);
 		
-		if (detailDto != null) {
-			request.setAttribute("dto", detailDto);
+		if (boardDto != null) {
+			request.setAttribute("boardDto", boardDto);
 			RequestDispatcher dis = request.getRequestDispatcher("board/update.jsp");
 			dis.forward(request, response);
 		}

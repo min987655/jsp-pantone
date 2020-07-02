@@ -109,6 +109,7 @@
 
 .reply__userProfile__img img {
 	width: 4em;
+	border-radius: 70em;
 }
 
 .reply__userProfile__img {
@@ -123,7 +124,7 @@
 }
 
 .reply__createDate {
-	grid-column: 5/7;
+	grid-column: 5/9;
 	font-size: .8rem;
 }		
 	
@@ -172,6 +173,7 @@
 .reply__write__username {
 	grid-column: 1/3;
 	font-size: .8rem;
+	padding-bottom: .3em;
 }
 
 .reply__write__form {
