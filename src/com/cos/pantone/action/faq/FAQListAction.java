@@ -1,4 +1,4 @@
-package com.cos.pantone.action.board;
+package com.cos.pantone.action.faq;
 
 import java.io.IOException;
 
@@ -11,12 +11,12 @@ import com.cos.pantone.action.Action;
 import com.cos.pantone.repository.PaletteRepository;
 import com.cos.pantone.utill.Script;
 
-public class BoardHomeAction implements Action {
+public class FAQListAction implements Action {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		RequestDispatcher dis = request.getRequestDispatcher("home.jsp");
+		RequestDispatcher dis = request.getRequestDispatcher("faq/list.jsp");
 		dis.forward(request, response);
 	}
 }

@@ -11,10 +11,12 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class Reply {
+public class Palette {
 	private int id;
 	private int memberId;
-	private int paletteId;
+	private String title;
 	private String content;
+	private int readCount;
+	private int likeCount;
 	private Timestamp createDate;
 }

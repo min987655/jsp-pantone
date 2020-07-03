@@ -12,10 +12,10 @@ import javax.servlet.http.HttpSession;
 
 import com.cos.pantone.action.Action;
 import com.cos.pantone.dto.ReplyResponseDto;
-import com.cos.pantone.model.Board;
+import com.cos.pantone.model.Palette;
 import com.cos.pantone.model.Member;
 import com.cos.pantone.model.Reply;
-import com.cos.pantone.repository.BoardRepository;
+import com.cos.pantone.repository.PaletteRepository;
 import com.cos.pantone.repository.ReplyRepository;
 import com.cos.pantone.utill.Script;
 import com.google.gson.Gson;
@@ -45,7 +45,7 @@ public class ReplyWriteProcAction implements Action {
 		int result = replyRepository.save(reply);
 		
 		if (result == 1) {
-			List<ReplyResponseDto> replyDtos = replyRepository.findAll(reply.getBoardId());
+			List<ReplyResponseDto> replyDtos = replyRepository.findAll(reply.getPaletteId());
 			String replyDtosJson = gson.toJson(replyDtos);
 			Script.outJson(replyDtosJson, response);
 		} else {

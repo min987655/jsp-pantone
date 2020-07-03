@@ -2,6 +2,7 @@
 .grid__section__faq {
     grid-column: 3/10 ;
     justify-content: center;
+    min-height: 51em;
 }
 
 .list__img__colorTrend img{
@@ -25,7 +26,6 @@
     border-color: rgb(87, 87, 87, 0.3);
     margin: 1em 0 1em 0;
 }
-
 
 .list__img__colorTrend {
     display: inline-block;

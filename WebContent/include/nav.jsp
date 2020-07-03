@@ -46,10 +46,10 @@
 							<a href="#">Color Trend</a>
 						</li>
 						<li class="nav__list">
-							<a href="/pantone/board?cmd=palette&page=0">Palette</a>
+							<a href="/pantone/palette?cmd=list&page=0">Palette</a>
 						</li>
 						<li class="nav__list">
-							<a href="/pantone/board?cmd=faq">FAQ</a>
+							<a href="/pantone/faq?cmd=list">FAQ</a>
 						</li>
 					</ul>
 					<ul class="nav__util">

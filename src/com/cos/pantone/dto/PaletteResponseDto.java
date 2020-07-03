@@ -1,6 +1,6 @@
 package com.cos.pantone.dto;
 
-import java.util.List;
+import com.cos.pantone.model.Palette;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class DetailResponseDto {
-	private PaletteResponseDto paletteDto;
-	private List<ReplyResponseDto> replyDtos;
+public class PaletteResponseDto {
+	private Palette palette;
+	private String username;
 }

@@ -1,6 +1,7 @@
 .grid__section__palette {
 	grid-column: 3/10;
 	justify-content: center;
+	min-height: 51em;
 }
 
 .list__img__palette img {

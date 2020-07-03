@@ -10,6 +10,7 @@ import javax.servlet.http.HttpSession;
 
 import com.cos.pantone.action.Action;
 import com.cos.pantone.action.board.BoardHomeAction;
+import com.cos.pantone.action.faq.FAQListAction;
 import com.cos.pantone.action.member.MemberSigninAction;
 import com.cos.pantone.action.palette.PaletteDeleteAction;
 import com.cos.pantone.action.palette.PaletteDetailAction;
@@ -18,16 +19,14 @@ import com.cos.pantone.action.palette.PaletteUpdateAction;
 import com.cos.pantone.action.palette.PaletteUpdateProcAction;
 import com.cos.pantone.action.palette.PaletteWriteAction;
 import com.cos.pantone.action.palette.PaletteWriteProcAction;
-import com.cos.pantone.action.reply.ReplyDeleteProcAction;
-import com.cos.pantone.action.reply.ReplyWriteProcAction;
 
-//http://localhost:8000/pantone/reply
-@WebServlet("/reply")
-public class ReplyController extends HttpServlet {
-	private final static String TAG = "ReplyController : ";
+//http://localhost:8000/pantoen/board
+@WebServlet("/board")
+public class BoardHomeController extends HttpServlet {
+	private final static String TAG = "BoardHomeController : ";
 	private static final long serialVersionUID = 1L;
 
-	public ReplyController() {
+	public BoardHomeController() {
 		super();
 	}
 
@@ -46,7 +45,7 @@ public class ReplyController extends HttpServlet {
 			throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		session.setAttribute("path", request.getContextPath());
-		// http://localhost:8000/pantone/reply?cmd=
+		// http://localhost:8000/pantone/board
 		String cmd = request.getParameter("cmd");
 		Action action = router(cmd);
 		System.out.println(TAG + "action : " + action);
@@ -55,11 +54,9 @@ public class ReplyController extends HttpServlet {
 	
 	public Action router(String cmd) {
 		System.out.println(TAG + "cmd : " + cmd);
-		if(cmd.equals("writeProc")) {
-			return new ReplyWriteProcAction();
-		} else if (cmd.equals("deleteProc")) {
-			return new ReplyDeleteProcAction();
-		}
+		if(cmd.equals("home")) {
+			return new BoardHomeAction();
+		} 
 		return null;
 	}
 
