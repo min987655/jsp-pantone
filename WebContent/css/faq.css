@@ -1,0 +1,29 @@
+.grid__section__faq {
+    grid-column: 3/10 ;
+    justify-content: center;
+    min-height: 51em;
+}
+
+.thumbnail__list__faq {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 5em 0 2em 0;
+}
+
+.thumbnail__list__faq li {
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-bottom: 1px;
+    border-style: ridge;
+    border-color: rgb(87, 87, 87, 0.3);
+    margin: 1em 0 1em 0;
+}
+
+.list__text__faq {
+    display: inline-block;
+}
+
+.list__content__faq {
+	display: none;
+}

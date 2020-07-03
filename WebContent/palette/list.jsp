@@ -11,7 +11,7 @@
 					<li>
 						<a href="/pantone/palette?cmd=detail&id=${palette.id}" class="inner">
 							<div class="list__img__palette">
-								<img class="img" src="/pantone/image/thumbnail.png" alt="thumbnail" />
+								<img class="img" src="${palette.content}" onerror="this.src='/pantone/image/thumbnail.png'" alt="thumbnail"  />
 							</div>
 							<div class="list-text">
 								<h4 class="list-head">${palette.title}</h4>

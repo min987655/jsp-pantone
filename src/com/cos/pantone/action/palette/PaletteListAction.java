@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.cos.pantone.action.Action;
 import com.cos.pantone.model.Palette;
 import com.cos.pantone.repository.PaletteRepository;
+import com.cos.pantone.utill.HtmlParser;
 
 public class PaletteListAction implements Action {
 
@@ -26,6 +27,11 @@ public class PaletteListAction implements Action {
 		List<Palette> palettes = paletteRepository.findAll(page);
 		System.out.println(TAG + " palettes : " + palettes.toString());
 
+		for (Palette palette : palettes) {
+			String summernoteImg = HtmlParser.getContentSummernote(palette.getContent());
+			palette.setContent(summernoteImg);
+		}
+		
 		request.setAttribute("palettes", palettes);
 		
 		int count = paletteRepository.count();

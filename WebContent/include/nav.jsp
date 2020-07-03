@@ -15,7 +15,8 @@
 <link rel="icon" href="data:;base64,iVBORw0KGgo=">
 <link rel="stylesheet" href="/pantone/css/nav.css">
 <link rel="stylesheet" href="/pantone/css/body.css">
-<link rel="stylesheet" href="/pantone/css/board.css">
+<link rel="stylesheet" href="/pantone/css/faq.css">
+<link rel="stylesheet" href="/pantone/css/colorTrend.css">
 <link rel="stylesheet" href="/pantone/css/palette.css">
 <link rel="stylesheet" href="/pantone/css/myPage.css">
 <link rel="stylesheet" href="/pantone/css/profileUpload.css">
@@ -25,7 +26,7 @@
 <link rel="stylesheet" href="/pantone/css/summernote/summernote-lite.css">
 
 <title>PANTONE</title>
-<script src="js/home.js" defer></script>
+<script src="js/nav.js" defer></script>
 </head>
 <body>
 	<div class="container">
@@ -43,7 +44,7 @@
 							<a href="#">About</a>
 						</li>
 						<li class="nav__list">
-							<a href="#">Color Trend</a>
+							<a href="/pantone/colorTrend?cmd=list">Color Trend</a>
 						</li>
 						<li class="nav__list">
 							<a href="/pantone/palette?cmd=list&page=0">Palette</a>

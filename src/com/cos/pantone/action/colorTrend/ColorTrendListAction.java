@@ -1,4 +1,4 @@
-package com.cos.pantone.action.faq;
+package com.cos.pantone.action.colorTrend;
 
 import java.io.IOException;
 import java.util.List;
@@ -14,9 +14,9 @@ import com.cos.pantone.repository.FAQRepository;
 import com.cos.pantone.repository.PaletteRepository;
 import com.cos.pantone.utill.Script;
 
-public class FAQListAction implements Action {
+public class ColorTrendListAction implements Action {
 
-	private final static String TAG = "FAQListAction : ";
+	private final static String TAG = "ColorTrendListAction : ";
 	
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

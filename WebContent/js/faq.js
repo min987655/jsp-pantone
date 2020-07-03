@@ -1,0 +1,9 @@
+$(function(){
+	$(".list__title__faq").click(function(){
+		$(".list__content__faq").slideUp();
+		if(!$(this).next().is(":visible"))
+		{
+			$(this).next().slideDown();
+		}
+	})
+})

@@ -1,5 +1,4 @@
-.grid__section__colorTrend,
-.grid__section__faq {
+.grid__section__colorTrend {
     grid-column: 3/10 ;
     justify-content: center;
     min-height: 51em;
@@ -9,15 +8,13 @@
     width: 10em;
 }
 
-.thumbnail__list__colorTrend,
-.thumbnail__list__faq {
+.thumbnail__list__colorTrend {
     display: grid;
     grid-template-columns: 1fr;
     padding: 5em 0 2em 0;
 }
 
-.thumbnail__list__colorTrend li,
-.thumbnail__list__faq li {
+.thumbnail__list__colorTrend li {
     border-top: 0px;
     border-left: 0px;
     border-right: 0px;
@@ -31,7 +28,6 @@
     display: inline-block;
 }
 
-.list__text__colorTrend,
-.list__text__faq {
+.list__text__colorTrend {
     display: inline-block;
 }

@@ -21,7 +21,7 @@ function replyDelete(replyId) {
 }
 
 
-function replyWrite(boardId, memberId) {
+function replyWrite(paletteId, memberId) {
 	
 	if (memberId === undefined) {
 		alert("로그인이 필요합니다.");
@@ -29,7 +29,7 @@ function replyWrite(boardId, memberId) {
 	}
 	
 	var data = {
-		boardId: boardId,
+		paletteId: paletteId,
 		memberId: memberId,
 		content: $("#reply__write__form").val()
 	};
