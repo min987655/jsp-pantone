@@ -6,9 +6,9 @@
 
 <section class="grid__section__update">
 
-	<div class="my__palette__update">My Palette Update</div>
 	<form class="update__form" action="/pantone/palette?cmd=updateProc" method="POST">
 		
+	<div class="my__palette__update">My Palette Update</div>
 		<input type="hidden" value="${paletteDto.palette.id}" name="id">
 		<div class="write__form__bar">
 			<input value="${paletteDto.palette.title}" id="title" name="title" type="text" class="update__title" placeholder=" Title" />
@@ -22,13 +22,6 @@
 
 </section>
 
-<script>
-	$(document).ready(function() {
-		$('#summernote').summernote({
-			tabsize : 2,
-			height : 600
-		});
-	});
-</script>
+<script src="/pantone/js/write_summernote.js"></script>
 
 <%@ include file="/include/footer.jsp"%>

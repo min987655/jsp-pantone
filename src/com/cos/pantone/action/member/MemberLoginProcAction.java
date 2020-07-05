@@ -3,6 +3,7 @@ package com.cos.pantone.action.member;
 import java.io.IOException;
 
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -39,6 +40,15 @@ public class MemberLoginProcAction implements Action {
 		if (member != null) {
 			HttpSession session = request.getSession();
 			session.setAttribute("principal", member);
+			
+			if (request.getParameter("remember") != null) {
+				Cookie cookie = new Cookie("remember", member.getUsername());
+				response.addCookie(cookie);
+			} else {
+				Cookie cookie = new Cookie("remember", "");
+				cookie.setMaxAge(0);
+				response.addCookie(cookie);
+			}
 			
 			Script.href("로그인에 성공하였습니다.", "/pantone/index.jsp", response);
 		} else {

@@ -82,3 +82,9 @@
   color: white;
 }
 
+@media ( max-width : 800px) {
+	#img__wrap {
+		width: 23em;
+		height: 23em;
+	}
+}

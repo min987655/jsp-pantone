@@ -12,11 +12,11 @@
 }
 
 header {
-    grid-column: 1/12;
+    grid-column: 2/11;
     display: grid;
     grid-template-columns: 1fr 8fr;
     align-items: center;
-    padding: 0.5em 7em 0em 7em;
+/*     padding: 0.5em 7em 0em 7em; */
 }
 
 .hamburger {
@@ -25,13 +25,13 @@ header {
 
 .header__logo {
     width: 9em;
-    margin-left: .9em;
+/*     margin-left: .9em; */
 }
 
 .nav__bar {
     display: grid;
-    grid-template-columns: 8.3fr 1.7fr;
-    align-items: center;
+    grid-template-columns: 8fr 2fr;
+/*     align-items: center; */
 }
 
 li {
@@ -40,7 +40,7 @@ li {
 
 a {
     text-decoration: none;
-    color:black;
+    color:#2f2f2f;
 }
 
 .nav__menu {
@@ -59,12 +59,17 @@ a {
     grid-template-columns: auto auto auto;
     justify-content: right;
     align-items: center;
-    grid-gap: 1.3em;
+/*     grid-gap: 1.3em; */
+}
+
+.nav__util a {
+	margin-left: 1em;
 }
 
 .nav__userProfile {
-	padding-top : 0.2em;
+	margin-top : 0.2em;
 	width: 2.3em;
+	height: 2.3em;
 	border-radius: 70em;
 }
 
@@ -74,7 +79,7 @@ a {
     width: 100%;
 }
 
-a:visited {color: black;}
+a:visited {color: #2f2f2f;}
 
 a:hover {
     color:rgb(59, 96, 165);
@@ -116,6 +121,10 @@ a:hover {
         padding: 0.5em 0 0.5em 0;
     }
 
+    .nav__list a {
+        margin: 0;
+    }
+    
     .header__logo {
         display: inline-block;
         margin: 0 12em 0.2em 0;

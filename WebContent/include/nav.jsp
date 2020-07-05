@@ -13,16 +13,17 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@350&display=swap" rel="stylesheet">
 <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+<link rel="stylesheet" href="/pantone/css/colorTrend.css">
 <link rel="stylesheet" href="/pantone/css/nav.css">
 <link rel="stylesheet" href="/pantone/css/body.css">
 <link rel="stylesheet" href="/pantone/css/faq.css">
-<link rel="stylesheet" href="/pantone/css/colorTrend.css">
 <link rel="stylesheet" href="/pantone/css/palette.css">
 <link rel="stylesheet" href="/pantone/css/myPage.css">
 <link rel="stylesheet" href="/pantone/css/profileUpload.css">
 <link rel="stylesheet" href="/pantone/css/write.css">
 <link rel="stylesheet" href="/pantone/css/update.css">
 <link rel="stylesheet" href="/pantone/css/detail.css">
+<link rel="stylesheet" href="/pantone/css/about.css">
 <link rel="stylesheet" href="/pantone/css/summernote/summernote-lite.css">
 
 <title>PANTONE</title>
@@ -41,10 +42,10 @@
 				<div class="nav__bar">
 					<ul class="nav__menu">
 						<li class="nav__list">
-							<a href="#">About</a>
+							<a href="/pantone/about?cmd=about">About</a>
 						</li>
 						<li class="nav__list">
-							<a href="/pantone/colorTrend?cmd=list">Color Trend</a>
+							<a href="/pantone/colorTrend?cmd=colorTrend">Color Trend</a>
 						</li>
 						<li class="nav__list">
 							<a href="/pantone/palette?cmd=list&page=0">Palette</a>

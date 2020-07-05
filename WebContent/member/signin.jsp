@@ -29,11 +29,13 @@
         </p>
         <p class="signin__form__item">
             <label class="user__password" for="password">Password</label>
-            <input id="password" name="password" type="password" placeholder="Password" required />
+            <input class="password" id="password" name="password" type="password" placeholder="Password" required />
         </p>
         <p class="signin__form__item">
             <label class="user__confirm__password" for="confirm__password">Confirm Password</label>
-            <input id="confirm__password" name="confirm__password" type="password" placeholder="Confirm Password" onclick="passwordCheck();" required />
+            <input class="password" id="confirm__password" name="confirm__password" type="password" placeholder="Confirm Password" onclick="passwordCheck();" required />
+			<div class="alert__success" id="alert__success">The passwords match.</div>
+			<div class="alert__danger" id="alert__danger">Passwords do not match.</div>       
         </p>
         <p class="signin__form__item">
             <input type="submit" value="Sign In" id="submit">
@@ -41,5 +43,31 @@
     </form>
     </section>
     <script src="/pantone/js/signin.js"></script>
+    <script>
+    	$(function() {
+			$("#alert__success").hide();
+			$("#alert__danger").hide();
+			$(".password").keyup(function() {
+				const pw = $("#password").val();
+				const conPw = $("#confirm__password").val();
+				if ( pw != "" || conPw != "") { 
+					if (pw == conPw) {
+						$("#alert__success").show();
+						$("#alert__danger").hide();
+// 						submit 비활성화 속성을 제거해주는 코드
+						$("#submit").removeAttr("disabled");
+					} else {
+						$("#alert__success").hide();
+						$("#alert__danger").show();
+// 						submit을 비활성화 시키는 코드 
+						$("#submit").attr("disabled", "disabled");
+					}
+				}
+			});
+		});
+    
+    
+    
+    </script>
 </body>
 </html>

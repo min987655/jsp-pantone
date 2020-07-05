@@ -10,7 +10,7 @@ import javax.servlet.http.HttpSession;
 
 import com.cos.pantone.action.Action;
 import com.cos.pantone.action.board.BoardHomeAction;
-import com.cos.pantone.action.colorTrend.ColorTrendListAction;
+import com.cos.pantone.action.colorTrend.ColorTrendAction;
 import com.cos.pantone.action.faq.FAQListAction;
 import com.cos.pantone.action.member.MemberSigninAction;
 import com.cos.pantone.action.palette.PaletteDeleteAction;
@@ -56,8 +56,8 @@ public class ColorTrendController extends HttpServlet {
 	
 	public Action router(String cmd) {
 		System.out.println(TAG + "cmd : " + cmd);
-		if(cmd.equals("list")) {
-			return new ColorTrendListAction();
+		if(cmd.equals("colorTrend")) {
+			return new ColorTrendAction();
 		}
 		return null;
 	}

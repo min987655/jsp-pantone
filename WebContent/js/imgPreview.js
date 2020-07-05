@@ -8,8 +8,8 @@ $("#img__preview").on("change", function(e) {
 		return;
 	}
 	
-	if (f.size > 3145728) {
-		alert('3MB이하의 이미지만 첨부 가능합니다.');
+	if (f.size > 1048576) {
+		alert('1MB이하의 이미지만 첨부 가능합니다.');
 		return;
 	}
 	

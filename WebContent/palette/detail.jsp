@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <%@ include file="/include/nav.jsp"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
 <section class="grid__section__detail">
 
@@ -10,7 +11,9 @@
 			<div class="info__title">${detailDto.paletteDto.palette.title}</div>
 			<div class="info__writter">${detailDto.paletteDto.username}</div>
 			<div class="info__readCount">조회수 : ${detailDto.paletteDto.palette.readCount}</div>
-			<div class="info__createDate">${detailDto.paletteDto.palette.createDate}</div>
+			<div class="info__createDate">
+				<fmt:formatDate value="${detailDto.paletteDto.palette.createDate}" pattern="yyyy.MM.dd HH:mm" />
+			</div>
 			<div class="detail__content">${detailDto.paletteDto.palette.content}</div>
 			<c:if test="${sessionScope.principal.id == detailDto.paletteDto.palette.memberId}">
 				<button class="info__update__button" onclick="location.href = '/pantone/palette?cmd=update&id=${detailDto.paletteDto.palette.id}';">Update</button>
@@ -30,7 +33,9 @@
 								<img src="${replyDto.userProfile}" alt="userProfile" onerror="this.src='/pantone/image/userProfile.png'" />
 							</div>
 							<div class="reply__username">${replyDto.username}</div>
-							<div class="reply__createDate">${replyDto.reply.createDate}</div>
+							<div class="reply__createDate">
+								<fmt:formatDate value="${replyDto.reply.createDate}" pattern="yyyy.MM.dd HH:mm" />
+							</div>
 							<div class="reply__content">${replyDto.reply.content}</div>
 							<c:if test="${replyDto.reply.memberId == sessionScope.principal.id}">
 								<button class="reply__delete__button" onclick="replyDelete(${replyDto.reply.id})">Delete</button>

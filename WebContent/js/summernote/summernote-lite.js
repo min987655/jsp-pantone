@@ -8656,7 +8656,7 @@ var ImageDialog_ImageDialog = /*#__PURE__*/function () {
 
       if (this.options.maximumImageFileSize) {
         var unit = Math.floor(Math.log(this.options.maximumImageFileSize) / Math.log(1024));
-        var readableSize = (this.options.maximumImageFileSize / Math.pow(1024, unit)).toFixed(2) * 1 + ' ' + ' KMGTP'[unit] + 'B';
+        var readableSize = (this.options.maximumImageFileSize / Math.pow(1024, unit)).toFixed(2) * 3 + ' ' + ' KMGTP'[unit] + 'B';
         imageLimitation = "<small>".concat(this.lang.image.maximumFileSize + ' : ' + readableSize, "</small>");
       }
 

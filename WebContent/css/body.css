@@ -1,6 +1,6 @@
 .grid__section__home {
-    grid-column: 3/10;
-    padding: 1em;
+    grid-column: 2/11;
+    padding: 2em 0 0 0;
 }
 
 .section__20color img {
@@ -23,8 +23,10 @@
         padding: 0px;
     }
 
-    .section__20color,
-    .section__identity {
-        padding: 0px;
+    .section__20color {
+    	padding: 1em 0 0 0;
+    }
+    .section__identity img {
+        padding: 3em 0 5em 0;
     }
 }

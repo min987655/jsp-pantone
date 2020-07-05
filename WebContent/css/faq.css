@@ -1,13 +1,12 @@
 .grid__section__faq {
-    grid-column: 3/10 ;
-    justify-content: center;
-    min-height: 51em;
+    grid-column: 2/11 ;
 }
 
 .thumbnail__list__faq {
     display: grid;
     grid-template-columns: 1fr;
-    padding: 5em 0 2em 0;
+    padding: 3em 0 3em 0;
+    text-align: center;
 }
 
 .thumbnail__list__faq li {
@@ -17,13 +16,28 @@
     border-bottom: 1px;
     border-style: ridge;
     border-color: rgb(87, 87, 87, 0.3);
-    margin: 1em 0 1em 0;
+    margin: 1.5em 0 1em 0;
 }
 
-.list__text__faq {
-    display: inline-block;
+.list__title__faq {
+	font-size: 1.3rem;
 }
 
 .list__content__faq {
 	display: none;
+	margin: 1em auto;
+}
+
+@media ( max-width : 800px) {
+	
+	.thumbnail__list__faq {
+       display: block;
+       width: 80%;
+       padding: 0;
+       margin: 3em auto;
+	}
+	
+	.thumbnail__list__faq li {
+       margin: 2em auto;
+	}
 }

@@ -34,7 +34,7 @@ public class MemberProfileUploadProcAction implements Action {
 					(
 							request,
 							realPath,
-							1024*1024*3,
+							1024*1024*1,
 							"UTF-8",
 							new DefaultFileRenamePolicy()
 					);

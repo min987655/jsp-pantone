@@ -1,5 +1,5 @@
 .grid__section__detail {
-	grid-column: 1/13;
+	grid-column: 1/12;
 	padding: 0;
 	font-family: 'Heebo', sans-serif;
 	font-size: 10px;
@@ -9,46 +9,47 @@
 
 .detail__info {
 	display: grid;
-	grid-template-columns: repeat(15, 1fr);
-	margin-bottom: 2em;
+	grid-template-columns: repeat(11, 1fr);
+	margin-bottom: 3em;
 }
 
 .detail__boardname {
-	grid-column : 2/15;
+	grid-column : 2/11;
 	font-size: 1rem;
-	color: #727272;
+	color: #2f2f2f;
 	padding: 3.5em 0 0 .2em; 
 }
 
 .info__title {
-	grid-column: 2/15;
+	grid-column: 2/11;
 	font-size: 2.3rem;
 	padding: 0 0 .5em .01em;
+	color: #2f2f2f;
 }
 
 .info__writter {
 	grid-column: 2/3;
 	font-size: 1rem;
 	padding-left: .2em;
-	color: #5c5c5c;
+	color: #2f2f2f;
 }
 
 .info__readCount {
 	grid-column: 3/4;
 	font-size: 1rem;
-	color: #5c5c5c;
+	color: #2f2f2f;
 }
 
 .info__createDate {
-	grid-column: 13/15;
+	grid-column: 10/11;
 	font-size: 1rem;
 	text-align: right;
 	padding-right: 0.1em;
-	color: #5c5c5c;
+	color: #2f2f2f;
 }
 
 .detail__content {
-	grid-column: 2/15;
+	grid-column: 2/11;
 	font-size: 1rem;
 	margin-top: 1em;
 	padding: 1em 0 0 .2em;
@@ -59,28 +60,31 @@
 /* 	border-left: none;  */
 	min-height : 30em;
 	border-width: .05em;
+	color: #2f2f2f;
 }
 
 .info__update__button {
-	grid-column: 13/14;		
+	grid-column: 9/10;		
 }
 
 .info__delete__button {
-	grid-column: 14/15;
+	grid-column: 10/11;
 }
 
 .info__update__button,
 .info__delete__button {
-	border-radius: 2px;
+	border-radius: 3px;
 	border: none;
-	color: rgb(206, 171, 150);
+	color: #ffffff;
+	background-color: #c0c0c0;
 	cursor: pointer;
 	font-size: 1.1rem;
 	line-height: 1.6em;
 	padding: .2em;
-	margin-top: 2em;
+/* 	margin-top: 2em; */
 	width: 6em;
-	margin-left: .5em; 
+/* 	margin-left: .5em;  */
+	justify-self : right;
 }
 
 .info__update__button:hover,
@@ -91,7 +95,7 @@
 
 .reply__hr {
 	margin-bottom: 2.5em;
-	grid-column: 3/29;
+	grid-column: 3/21;
 	grid-row: 1/2;
 	border: 0 none;
 	color: #d8d8d8;
@@ -101,64 +105,77 @@
 
 .reply__userProfile {
 	display: grid;
-	grid-template-columns: repeat(30, 1fr);
-	grid-template-rows: repeat(3, auto);
+	grid-template-columns: repeat(22, 1fr);
+	grid-template-rows: repeat(4, auto);
 	grid-auto-flow: column;
 	margin-bottom: 2em;
 }
 
 .reply__userProfile__img img {
-	width: 4em;
+	width: 5em;
+	height: 5em;
 	border-radius: 70em;
+	margin-left: 1em;
 }
 
 .reply__userProfile__img {
 	grid-column: 3/4;
-	grid-row: 2/4;
+	grid-row: 2/5;
 	align-self: center;
 }
 
 .reply__username {
 	grid-column: 4/5;
+	grid-row: 2/3;
+	align-self: center;
 	font-size: .8rem;
+	color: #575757;
 }
 
 .reply__createDate {
 	grid-column: 5/9;
+	grid-row: 2/3;
+	align-self: center;
 	font-size: .8rem;
+	color: #575757;
 }		
 	
 .reply__content {
-	grid-column: 4/25;
-	font-size: 1rem;
+	grid-column: 4/19;
+	grid-row: 3/5;
+	align-self: end;
+	font-size: 1.15rem;
+	color: #7b7b7b;
 }
 
 .reply__delete__button {
-	grid-column: 28/29;
-	grid-row: 2/4;
+	grid-column: 19/21;
+	grid-row: 2/5;
 	width: 5em;
 	height: 2.5em;
-	align-self: center;
+	align-self: end;
 	border-radius: 2px;
 	border: none;
 	cursor: pointer;
-	color: rgb(206, 171, 150);
+	color: #707070;
 	font-size: .9rem;
+	justify-self: right; 
+	background-color: white;
 }	
 
 .reply__delete__button:hover {
-	background: rgb(206, 171, 150);
+	background: #c0c0c0;
 	color: white;
 }		
 
 .reply__write {
 	display: grid;
-	grid-template-columns: repeat(30, 1fr);
+	grid-template-columns: repeat(22, 1fr);
 	margin-bottom: 2em;
 }
 
 .reply__write__box {
-	grid-column: 3/29;
+	grid-column: 3/21;
 	display: grid;
 	grid-template-columns: 1fr;
 	padding: 1em;
@@ -174,12 +191,14 @@
 	grid-column: 1/3;
 	font-size: .8rem;
 	padding-bottom: .3em;
+	color: #575757;
 }
 
 .reply__write__form {
 	grid-column: 1/2;
-	font-size: .8rem;
+	font-size: 1rem;
 	border: none;
+	color: #7b7b7b;
 }		
 	
 .reply__write__button {
@@ -188,8 +207,8 @@
 	align-self: center;
 	border-radius: 2px;
 	border: none;
-	cursor: pointer;
-	color: #6e6e6e;
+	cursor: pointer;	
+	color: #575757;
 	background-color: white;
 	font-size: 1rem;
 	align-self: end;

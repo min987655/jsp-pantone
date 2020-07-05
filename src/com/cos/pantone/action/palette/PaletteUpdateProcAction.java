@@ -28,6 +28,10 @@ public class PaletteUpdateProcAction implements Action {
 		}
 		Member principal = (Member)session.getAttribute("principal");
 		
+		if (request.getParameter("content")==null) {
+			Script.back("1MB이하의 이미지만 첨부 가능합니다.", response);
+		}
+		
 		// 1. 유효성 검사
 		if 
 		(

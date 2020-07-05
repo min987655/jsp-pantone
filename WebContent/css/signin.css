@@ -9,7 +9,7 @@
 	background: #fff;
 	padding: 5em 4em 2em;
 	max-width: 400px;
-	margin: 2em auto 0;
+	margin: 2em auto 10em;
 	box-shadow: 0 0 0.5em rgb(218, 218, 218);
 	border-radius: 2px;
 }
@@ -46,9 +46,17 @@
 	display: inline-block;
 	width: 64%;
 	margin: 0;
+	background: #fff;
+	border: 1px solid #dbdbdb;
+	font-size: 1.6em;
+	padding: .8em .5em;
+	border-radius: 2px;
+	border-top: 0;
+	border-left: 0;
+	border-right: 0;
+	opacity: 60%;
 }
 
-#username, 
 #email, 
 #password, 
 #confirm__password {
@@ -61,6 +69,7 @@
 	border-left: 0;
 	border-right: 0;
 	opacity: 60%;
+	width: 95%;
 }
 
 #btn {
@@ -69,7 +78,7 @@
 	color: rgb(206, 171, 150);
 	cursor: pointer;
 	display: inline-block;
-	width: 32%;
+	width: 28%;
 	font-size: 2em;
 	line-height: 1.4em;
 	margin-left: .5em;
@@ -94,6 +103,7 @@
 	margin: 2em 0 0;
 	outline: none;
 	padding: .8em 0;
+	width: 100%;
 }
 
 #submit:hover {

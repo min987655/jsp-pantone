@@ -1,36 +1,37 @@
 .grid__section__update {
-	grid-column: 1/13;
+	grid-column: 1/12;
 	padding: 0;
 	font-family: 'Heebo', sans-serif;
 	font-size: 10px;
-	margin: 0em 0 0.6em 0;
+	margin: 0;
 	background-color: white;
 }
 
 .my__palette__update {
-	text-align: center;
-	font-size: 2rem;
-	color: #727272;
-	padding : 1.5em 0 1.5em 0;
-	background-color: #b0b6d0;
+	grid-column : 2/11;
+	font-size: 1rem;
+	color: #2f2f2f;
+	padding: 3.5em 0 2em 0; 
 }
 
 .update__form {
 	background: #fff;
 	max-width: 85%;
-	margin: 4em auto 8em;
+	margin: 4em 14em 8em 14em;
 }
 
 #update__submit {
-	grid-column: 10/11;
+	grid-column: 10/12;
 	border-radius: 2px;
 	border: none;
-	color: rgb(206, 171, 150);
+	color: #ffffff;
+	background-color: #c0c0c0;
 	cursor: pointer;
 	font-size: 2em;
 	line-height: 1.6em;
 	padding: .2em;
-	width: 8em;
+	width: 6em;
+	justify-self: right; 
 }
 
 #update__submit:hover {

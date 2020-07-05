@@ -23,7 +23,67 @@ public class PaletteRepository {
 	private Connection conn = null;
 	private PreparedStatement pstmt = null;
 	private ResultSet rs = null;
+	
+	public List<Palette> findAll(int page, String keyword) {
+		StringBuilder sb = new StringBuilder();
+		sb.append("SELECT /*+ INDEX_DESC(PALETTE SYS_C0010215)*/id, ");
+		sb.append("memberId, title, content, readCount, likeCount, createDate ");
+		sb.append("FROM palette ");
+		sb.append("WHERE title LIKE ? ");
+		sb.append("OFFSET ? ROWS FETCH NEXT 9 ROWS ONLY");
+		
+		final String SQL = sb.toString();
+		List<Palette> palettes = new ArrayList<>();
+		
+		try {
+			conn = DBConn.getConnection();
+			pstmt = conn.prepareStatement(SQL);
+			pstmt.setString(1, "%"+keyword+"%");
+			pstmt.setInt(2, page*9);
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				Palette palette = Palette.builder()
+						.id(rs.getInt("id"))
+						.memberId(rs.getInt("memberId"))
+						.title(rs.getString("title"))
+						.content(rs.getString("content"))
+						.readCount(rs.getInt("readCount"))
+						.likeCount(rs.getInt("likeCount"))
+						.createDate(rs.getTimestamp("createDate"))
+						.build();
+				
+				palettes.add(palette);
+			};
+			return palettes;
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println(TAG + "findAll(int page, String keyword) : " + e.getMessage());
+		} finally {
+			DBConn.close(conn, pstmt, rs);
+		}
+		return null;
+	}
 
+	public int count(String keyword) {
+		final String SQL = "SELECT count(*) FROM palette WHERE title LIKE ? OR content LIKE ?";
+		try {
+			conn = DBConn.getConnection();
+			pstmt = conn.prepareStatement(SQL);
+			pstmt.setString(1, "%" +keyword+ "%");
+			pstmt.setString(2, "%" +keyword+ "%");
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				return rs.getInt(1);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println(TAG + "count(String keyword) : " + e.getMessage());
+		} finally {
+			DBConn.close(conn, pstmt, rs);
+		}
+		return -1;
+	}
+	
 	public int updateReadCount(int paletteId) {
 		final String SQL = "UPDATE palette SET readCount = readCount + 1  WHERE id = ?";
 		try {
@@ -139,7 +199,7 @@ public class PaletteRepository {
 	
 	public List<Palette> findAll(int page) {
 		StringBuilder sb = new StringBuilder();
-		sb.append("SELECT /*+ INDEX_DESC(PALETTE SYS_C007733)*/id, ");
+		sb.append("SELECT /*+ INDEX_DESC(PALETTE SYS_C0010215)*/id, ");
 		sb.append("memberId, title, content, readCount, likeCount, createDate ");
 		sb.append("FROM palette ");
 		sb.append("OFFSET ? ROWS FETCH NEXT 9 ROWS ONLY");

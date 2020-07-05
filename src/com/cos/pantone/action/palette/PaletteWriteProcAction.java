@@ -29,6 +29,10 @@ public class PaletteWriteProcAction implements Action {
 		}
 		Member principal = (Member)session.getAttribute("principal");
 		
+		if (request.getParameter("content")==null) {
+			Script.back("1MB이하의 이미지만 첨부 가능합니다.", response);
+		}
+		
 		// 1. 유효성 검사
 		if 
 		(
@@ -39,10 +43,11 @@ public class PaletteWriteProcAction implements Action {
 		){
 			return;	
 		}
-		
+
 		// 2. request에 title값과 content값 받기
 		String title = request.getParameter("title");
 		String content = request.getParameter("content");
+		
 
 		// 3. title값과 content값, principal.getId()값을 Board 오브젝트에 담기
 		Palette palette = Palette.builder()
